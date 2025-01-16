@@ -39,8 +39,8 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
+ALLOWED_HOSTS = ['https://spotify-manager-production.up.railway.app/', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://spotify-manager-production.up.railway.app/']
 
 
 
