@@ -1,5 +1,0 @@
-[phases.setup]
-nixPkgs = ['python311']
-
-[start]
-cmd = 'gunicorn spotify_manager.wsgi'

@@ -1,0 +1,8 @@
+﻿[build]
+builder = "nixpacks"
+buildCommand = "pip install -r requirements.txt"
+
+[deploy]
+startCommand = "gunicorn spotify_manager.wsgi"
+healthcheckPath = "/"
+restartPolicyType = "ON_FAILURE"
