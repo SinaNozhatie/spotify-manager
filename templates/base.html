@@ -12,7 +12,6 @@
             {% if user.is_authenticated %}
                 <div class="navbar-nav">
                     <a class="nav-link" href="{% url 'accounts:dashboard' %}">Dashboard</a>
-                    <a class="nav-link" href="{% url 'accounts:member_add' %}">Add Member</a>
                     <a class="nav-link" href="{% url 'admin:index' %}">Admin Panel</a>
                     <form method="post" action="{% url 'accounts:logout' %}" class="d-inline">
                         {% csrf_token %}
