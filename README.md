@@ -18,14 +18,24 @@
 ## ⚡️ نصب و راه‌اندازی سریع
 
 
-git clone https://github.com/YourUsername/spotify-manager.git
-cd spotify-manager
+```bash
+# ساخت محیط مجازی
 python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
 
+# فعال‌سازی محیط مجازی 
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+
+# نصب وابستگی‌ها
+pip install -r requirements.txt
+
+# اجرای مایگریشن‌ها
+python manage.py migrate
+
+# اجرای سرور توسعه
+python manage.py runserver
 
 ## 🚀 برنامه‌های آینده
 -    سیستم نوتیفیکیشن هوشمند
