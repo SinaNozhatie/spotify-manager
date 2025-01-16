@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Member</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="mb-3">
+            <label class="form-label">{{ field.label }}</label>
+            {{ field.errors }}
+            <input type="{% if field.name == 'email' %}email{% else %}text{% endif %}" 
+                   name="{{ field.name }}" 
+                   class="form-control"
+                   value="{{ field.value|default:'' }}">
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}
