@@ -2,12 +2,13 @@ name: Email Service Check
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # هر 6 ساعت
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
   email-test:
     runs-on: ubuntu-latest
+    environment: production
     
     steps:
     - uses: actions/checkout@v2

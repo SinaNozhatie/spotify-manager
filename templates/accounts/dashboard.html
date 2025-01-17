@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ account.email }}</h5>
                     <p class="card-text">
-                        Available Slots: {{ account.available_slots }}/5
+                        Available Slots: {{ account.available_slots }}/6
                     </p>
                     <a href="{% url 'accounts:account_detail' account.pk %}" class="btn btn-primary">View Details</a>
                 </div>
@@ -20,3 +20,5 @@
     </div>
 </div>
 {% endblock %}
+
+
