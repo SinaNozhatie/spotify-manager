@@ -1,4 +1,4 @@
-﻿[build]
+[build]
 builder = "nixpacks"
 buildCommand = "pip install -r requirements.txt"
 
@@ -6,3 +6,8 @@ buildCommand = "pip install -r requirements.txt"
 startCommand = "gunicorn spotify_manager.wsgi"
 healthcheckPath = "/"
 restartPolicyType = "ON_FAILURE"
+
+[[cron]]
+schedule = "0 9 * * *"
+command = "python manage.py send_expiry_notifications"
+timezone = "Asia/Tehran"
