@@ -1,0 +1,29 @@
+name: Email Service Check
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # هر 6 ساعت
+  workflow_dispatch:
+
+jobs:
+  email-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Test email service
+      env:
+        MAILGUN_ACCESS_KEY: ${{ secrets.MAILGUN_ACCESS_KEY }}
+      run: |
+        python manage.py test notifications.tests.EmailServiceTest
