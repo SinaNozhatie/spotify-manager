@@ -63,6 +63,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'rest_framework',
+    'notifications',
+
 ]
 
 MIDDLEWARE = [
@@ -157,3 +159,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'accounts:dashboard'
+
+
+
+# Email Settings
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = '0a4b21e6f59160e7d30e0293f9be887a-191fb7b6-bd94d214'
+MAILGUN_SERVER_NAME = 'sandbox031ce7b234b94935b185325a0d670088.mailgun.org'
+DEFAULT_FROM_EMAIL = 'postmaster@sandbox031ce7b234b94935b185325a0d670088.mailgun.org'
+
+
+
